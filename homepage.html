@@ -4,24 +4,33 @@
     <title>여행 또 가고 싶어질 때</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="declaration.css">
+    <!-- <style>
+    a:hover {
+      color : white;
+    }
+    </style>
+  -->
   </head>
 
   <body>
     <h1><a href="homepage.html">여행 또 가고 싶어질 때</a></h1>
-    <input type="button" value="night" onclick="
-    document.querySelector('body').style.backgroundColor='black';
-    document.querySelector('a').style.color='white';
-    ">
-    <input type="button" value="day" onclick="
-    document.querySelector('body').style.backgroundColor='white';
-    document.querySelector('a').style.color='black';
+    <input id="day_night" type="button" value="night" onclick="
+      if (document.querySelector('#day_night').value === 'night') {
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('a').style.color = 'white';
+        document.querySelector('#day_night').value = 'day';
+      } else {
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('a').style.color='black';
+        document.querySelector('#day_night').value = 'night';
+      }
     ">
     <div class="main-grid">
       <div class="list">
           <ul type = "square">
-            <li><a href="스페인여행.html">스페인 여행</a></li>
-            <li><a href="4월 제주여행.html">4월 제주 여행</a></li>
-            <li><a href="2월 제주여행.html">2월 제주 여행</a></li>
+            <li><a class="anker" href="스페인여행.html">스페인 여행</a></li>
+            <li><a class="anker" href="4월 제주여행.html">4월 제주 여행</a></li>
+            <li><a class="anker" href="2월 제주여행.html">2월 제주 여행</a></li>
           </ul>
       </div>
       <div class="picture">
