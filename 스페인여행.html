@@ -8,6 +8,7 @@
 
   <body>
     <h1><a href="homepage.html">여행 또 가고 싶어질 때</a></h1>
+    <input type="button" value="night" onclick="modeChange(this);">
     <div class="main-grid">
       <div class="list">
           <ul type = "square">
@@ -22,6 +23,27 @@
         <img src="20180119_173426.gif" width="400px"><img src="20180122_122146.jpg" width="400px">
         <img src="20180117_120033.gif" width="400px"><img src="20180117_205911.jpg" width="400px">
     </div>
+    <script>
+      function colorChange(backgroundColor, aColor) {
+        document.querySelector('body').style.backgroundColor = backgroundColor;
+        document.querySelector('ul').style.color = aColor;
+        alist = document.querySelectorAll('a');
+        var i = 0;
+        while (i < alist.length) {
+          alist[i].style.color = aColor;
+          i = i + 1;
+        }
+      }
+      function modeChange(self) {
+        if (self.value === 'night') {
+          colorChange('black', 'beige');
+          self.value = 'day';
+        } else {
+          colorChange('white', 'black');
+          self.value = 'night';
+        }
+      }
+    </script>
   </body>
 
 </html>

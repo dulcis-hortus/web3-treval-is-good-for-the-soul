@@ -10,21 +10,37 @@
     }
     </style>
   -->
-  </head>
+  <!--
+    <script>
+      function a_change(color) {
+        document.querySelector('ul').style.color=color;
+        alist = document.querySelectorAll('a');
+        var i = 0;
+        while (i < alist.length) {
+          alist[i].style.color=color;
+          i = i + 1;
+        }
+      }
 
+
+      function daynight_handler(self) {
+        if (self.value === 'night') {
+          document.querySelector('body').style.backgroundColor='black';
+          a_change('beige');
+          self.value = 'day';
+        }
+        else {
+          document.querySelector('body').style.backgroundColor='white';
+          a_change('black');
+          self.value = 'night';
+        }
+      }
+    </script>
+  -->
+  </head>
   <body>
     <h1><a href="homepage.html">여행 또 가고 싶어질 때</a></h1>
-    <input id="day_night" type="button" value="night" onclick="
-      if (document.querySelector('#day_night').value === 'night') {
-        document.querySelector('body').style.backgroundColor='black';
-        document.querySelector('a').style.color = 'white';
-        document.querySelector('#day_night').value = 'day';
-      } else {
-        document.querySelector('body').style.backgroundColor='white';
-        document.querySelector('a').style.color='black';
-        document.querySelector('#day_night').value = 'night';
-      }
-    ">
+    <input type="button" value="night" onclick="modeChange(this);">
     <div class="main-grid">
       <div class="list">
           <ul type = "square">
@@ -33,9 +49,29 @@
             <li><a class="anker" href="2월 제주여행.html">2월 제주 여행</a></li>
           </ul>
       </div>
-      <div class="picture">
-          <img id="soul" src="main screen.jpg" width=1200px>
-      </div>
-  </div>
+    <div class="picture">
+      <img id="soul" src="main screen.jpg" width=1200px>
+    </div>
+    <script>
+      function colorChange(backgroundColor, aColor) {
+        document.querySelector('body').style.backgroundColor = backgroundColor;
+        document.querySelector('ul').style.color = aColor;
+        alist = document.querySelectorAll('a');
+        var i = 0;
+        while (i < alist.length) {
+          alist[i].style.color = aColor;
+          i = i + 1;
+        }
+      }
+      function modeChange(self) {
+        if (self.value === 'night') {
+          colorChange('black', 'beige');
+          self.value = 'day';
+        } else {
+          colorChange('white', 'black');
+          self.value = 'night';
+        }
+      }
+    </script>
   </body>
 </html>
