@@ -4,6 +4,36 @@
     <title>여행 또 가고 싶어질 때</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="declaration.css">
+    <script>
+      var anker = {
+        "setColor" : function aChange(color) {
+          document.querySelector('ul').style.color = color;
+          alist = document.querySelectorAll('a');
+          var i = 0;
+          while (i < alist.length) {
+            alist[i].style.color = color;
+            i = i + 1;
+          }
+        }
+      }         // 나중에 할 것-> li와 h1의 분리
+      var body = {
+        "setBackgrondColor" : function backColor(color){
+          document.querySelector('body').style.backgroundColor = color;
+        }
+      }
+      function modeChange(self) {
+        if (self.value === 'night') {
+          body.setBackgrondColor('black');
+          anker.setColor('skyblue');
+          self.value = 'day';
+        } else {
+          body.setBackgrondColor('white');
+          anker.setColor('black');
+          self.value = 'night';
+        }
+                  // 이 코드의 단점은 'day'를 초기 설정에 적용시킬 수 없다는 점
+      }
+    </script>
     <!-- <style>
     a:hover {
       color : white;
@@ -52,26 +82,29 @@
     <div class="picture">
       <img id="soul" src="main screen.jpg" width=1200px>
     </div>
-    <script>
-      function colorChange(backgroundColor, aColor) {
-        document.querySelector('body').style.backgroundColor = backgroundColor;
-        document.querySelector('ul').style.color = aColor;
-        alist = document.querySelectorAll('a');
-        var i = 0;
-        while (i < alist.length) {
-          alist[i].style.color = aColor;
-          i = i + 1;
+    <!--script>
+
+      var click=0;
+
+      $(window).laod(function(){
+
+        $("input").bind("click", change);
+
+
+      })
+
+      function change() {
+
+        if(click==0){
+          $("body").css({background:black});
+          $("a").css({color: white});
+          click=1;
+        }else{
+          $("body").css({background:white});
+          $("a").css({color:black});
+          click=0;
         }
       }
-      function modeChange(self) {
-        if (self.value === 'night') {
-          colorChange('black', 'beige');
-          self.value = 'day';
-        } else {
-          colorChange('white', 'black');
-          self.value = 'night';
-        }
-      }
-    </script>
+    </script-->
   </body>
 </html>
