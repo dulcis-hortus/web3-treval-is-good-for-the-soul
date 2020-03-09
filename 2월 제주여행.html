@@ -4,6 +4,7 @@
     <title>여행 또 가고 싶어질 때</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="declaration.css">
+    <script src="color.js"></script>
   </head>
 
   <body>
@@ -23,28 +24,6 @@
         <img src="KakaoTalk_20200219_203731930_06.jpg" width="400px"><img src="KakaoTalk_20200219_203731930_08.jpg" width="400px">
         <img src="KakaoTalk_20200219_203731930_04.jpg" width="400px"><img src="KakaoTalk_20200219_203731930_05.jpg" width="400px">
       </div>
-      <script>
-        function colorChange(backgroundColor, aColor) {
-          document.querySelector('body').style.backgroundColor = backgroundColor;
-          document.querySelector('ul').style.color = aColor;
-          alist = document.querySelectorAll('a');
-          var i = 0;
-          while (i < alist.length) {
-            alist[i].style.color = aColor;
-            i = i + 1;
-          }
-        }
-        function modeChange(self) {
-          if (self.value === 'night') {
-            colorChange('black', 'beige');
-            self.value = 'day';
-          }
-          else {
-            colorChange('white', 'black');
-            self.value = 'night';
-          }
-        }
-      </script>
   </body>
 
 </html>
